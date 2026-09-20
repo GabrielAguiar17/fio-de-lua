@@ -1,0 +1,12 @@
+{
+  "name": "fio-de-lua",
+  "version": "1.0.0",
+  "description": "Fio de Luz Ateliê - Loja de crochê artesanal",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
