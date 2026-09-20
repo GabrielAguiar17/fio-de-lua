@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fio de Luz Ateliê</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <button class="header__menu-btn" id="menuBtn" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a href="#" class="header__logo">
+        <div class="header__logo-icon">
+          <!-- SVG inline da logo simplificada -->
+          <svg width="36" height="36" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="42" r="22" stroke="#C8962E" stroke-width="1.5" fill="none"/>
+            <path d="M28 42 Q40 20 52 42 Q40 58 28 42Z" stroke="#7B4A1E" stroke-width="1.5" fill="none"/>
+            <path d="M34 30 Q40 26 46 30" stroke="#C8962E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M52 38 Q58 44 54 50 Q52 52 50 50" stroke="#C8962E" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            <path d="M40 18 L40 10 M37 13 L40 10 L43 13" stroke="#C8962E" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="header__logo-text">
+          <span class="header__logo-name">Fio de Luz</span>
+          <span class="header__logo-sub">Ateliê</span>
+        </div>
+      </a>
+
+      <nav class="header__nav" id="mainNav">
+        <a href="#produtos" class="header__nav-link">Coleção</a>
+        <a href="#sobre" class="header__nav-link">Sobre</a>
+        <a href="#contato" class="header__nav-link">Contato</a>
+      </nav>
+
+      <button class="header__cart-btn" id="cartBtn" aria-label="Ver carrinho">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="header__cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div class="header__mobile-nav" id="mobileNav">
+      <a href="#produtos" class="header__nav-link" onclick="closeMobileNav()">Coleção</a>
+      <a href="#sobre" class="header__nav-link" onclick="closeMobileNav()">Sobre</a>
+      <a href="#contato" class="header__nav-link" onclick="closeMobileNav()">Contato</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Artesanal &amp; Exclusivo</p>
+      <h1 class="hero__title">Cada peça,<br><em>uma história</em></h1>
+      <p class="hero__desc">Tops de crochê feitos à mão com amor, para mulheres que valorizam o artesanal e o único.</p>
+      <a href="#produtos" class="btn btn--primary">Ver Coleção</a>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__badge">
+        <span>100%</span>
+        <span>Artesanal</span>
+      </div>
+      <div class="hero__threads">
+        <div class="thread thread--1"></div>
+        <div class="thread thread--2"></div>
+        <div class="thread thread--3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTAQUES -->
+  <section class="features">
+    <div class="features__item">
+      <div class="features__icon">✦</div>
+      <p>Feito à mão</p>
+    </div>
+    <div class="features__item">
+      <div class="features__icon">✦</div>
+      <p>Peça única</p>
+    </div>
+    <div class="features__item">
+      <div class="features__icon">✦</div>
+      <p>Fio natural</p>
+    </div>
+    <div class="features__item">
+      <div class="features__icon">✦</div>
+      <p>Entrega especial</p>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section class="produtos" id="produtos">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Nossa Coleção</p>
+        <h2 class="section-title">Tops Artesanais</h2>
+        <p class="section-desc">Cada peça é produzida com cuidado e dedicação no nosso ateliê.</p>
+      </div>
+
+      <!-- Filtros -->
+      <div class="filtros">
+        <button class="filtro-btn active" data-filter="all">Todos</button>
+        <button class="filtro-btn" data-filter="bojo">Com Bojo</button>
+        <button class="filtro-btn" data-filter="borboleta">Borboleta</button>
+        <button class="filtro-btn" data-filter="bandeau">Bandeau</button>
+      </div>
+
+      <!-- Grid de produtos -->
+      <div class="produtos__grid" id="produtosGrid">
+
+        <!-- Produto 1 -->
+        <article class="produto-card" data-category="bojo">
+          <div class="produto-card__img-wrap">
+            <img src="images/top-terracota.jpg" alt="Top Halter Terracota" class="produto-card__img" loading="lazy" />
+            <div class="produto-card__overlay">
+              <button class="btn btn--outline" onclick="adicionarCarrinho(this)" 
+                data-nome="Top Halter Terracota" data-preco="129.90">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+            <span class="produto-card__badge">Novo</span>
+          </div>
+          <div class="produto-card__info">
+            <h3 class="produto-card__name">Top Halter Terracota</h3>
+            <p class="produto-card__desc">Cropped com bojo estruturado e alças com miçangas de madeira. Cor terracota queimado.</p>
+            <div class="produto-card__footer">
+              <span class="produto-card__price">R$ 129,90</span>
+              <button class="produto-card__cart" onclick="adicionarCarrinho(this)"
+                data-nome="Top Halter Terracota" data-preco="129.90" aria-label="Adicionar ao carrinho">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Produto 2 -->
+        <article class="produto-card" data-category="bandeau">
+          <div class="produto-card__img-wrap">
+            <img src="images/top-bandeau-cru.jpg" alt="Top Bandeau Cru" class="produto-card__img" loading="lazy" />
+            <div class="produto-card__overlay">
+              <button class="btn btn--outline" onclick="adicionarCarrinho(this)"
+                data-nome="Top Bandeau Cru" data-preco="109.90">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+          </div>
+          <div class="produto-card__info">
+            <h3 class="produto-card__name">Top Bandeau Cru</h3>
+            <p class="produto-card__desc">Bandeau com nó frontal e alças trançadas com pérolas. Delicado e versátil.</p>
+            <div class="produto-card__footer">
+              <span class="produto-card__price">R$ 109,90</span>
+              <button class="produto-card__cart" onclick="adicionarCarrinho(this)"
+                data-nome="Top Bandeau Cru" data-preco="109.90" aria-label="Adicionar ao carrinho">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Produto 3 -->
+        <article class="produto-card" data-category="bojo">
+          <div class="produto-card__img-wrap">
+            <img src="images/top-franja-bege.jpg" alt="Top Franja Bege" class="produto-card__img" loading="lazy" />
+            <div class="produto-card__overlay">
+              <button class="btn btn--outline" onclick="adicionarCarrinho(this)"
+                data-nome="Top Franja Bege" data-preco="149.90">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+            <span class="produto-card__badge produto-card__badge--dest">Destaque</span>
+          </div>
+          <div class="produto-card__info">
+            <h3 class="produto-card__name">Top Franja Bege</h3>
+            <p class="produto-card__desc">Cropped com bojo, franjas longas e pérolas nas bordas. Sofisticado e único.</p>
+            <div class="produto-card__footer">
+              <span class="produto-card__price">R$ 149,90</span>
+              <button class="produto-card__cart" onclick="adicionarCarrinho(this)"
+                data-nome="Top Franja Bege" data-preco="149.90" aria-label="Adicionar ao carrinho">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Produto 4 -->
+        <article class="produto-card" data-category="borboleta">
+          <div class="produto-card__img-wrap">
+            <img src="images/top-borboleta-cru.jpg" alt="Top Borboleta Cru" class="produto-card__img" loading="lazy" />
+            <div class="produto-card__overlay">
+              <button class="btn btn--outline" onclick="adicionarCarrinho(this)"
+                data-nome="Top Borboleta Cru" data-preco="119.90">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+          </div>
+          <div class="produto-card__info">
+            <h3 class="produto-card__name">Top Borboleta Cru</h3>
+            <p class="produto-card__desc">Modelo butterfly em tom cru natural. Leve, delicado e perfeito para o verão.</p>
+            <div class="produto-card__footer">
+              <span class="produto-card__price">R$ 119,90</span>
+              <button class="produto-card__cart" onclick="adicionarCarrinho(this)"
+                data-nome="Top Borboleta Cru" data-preco="119.90" aria-label="Adicionar ao carrinho">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Produto 5 -->
+        <article class="produto-card" data-category="bojo">
+          <div class="produto-card__img-wrap">
+            <img src="images/top-verde-militar.jpg" alt="Top Bojo Verde Militar" class="produto-card__img" loading="lazy" />
+            <div class="produto-card__overlay">
+              <button class="btn btn--outline" onclick="adicionarCarrinho(this)"
+                data-nome="Top Bojo Verde Militar" data-preco="134.90">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+          </div>
+          <div class="produto-card__info">
+            <h3 class="produto-card__name">Top Bojo Verde Militar</h3>
+            <p class="produto-card__desc">Cropped estruturado com bojo e pérolas verdes nas alças. Cor verde militar intensa.</p>
+            <div class="produto-card__footer">
+              <span class="produto-card__price">R$ 134,90</span>
+              <button class="produto-card__cart" onclick="adicionarCarrinho(this)"
+                data-nome="Top Bojo Verde Militar" data-preco="134.90" aria-label="Adicionar ao carrinho">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Produto 6 -->
+        <article class="produto-card" data-category="borboleta">
+          <div class="produto-card__img-wrap">
+            <img src="images/top-borboleta-vinho.jpg" alt="Top Borboleta Vinho" class="produto-card__img" loading="lazy" />
+            <div class="produto-card__overlay">
+              <button class="btn btn--outline" onclick="adicionarCarrinho(this)"
+                data-nome="Top Borboleta Vinho" data-preco="124.90">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+            <span class="produto-card__badge">Novo</span>
+          </div>
+          <div class="produto-card__info">
+            <h3 class="produto-card__name">Top Borboleta Vinho</h3>
+            <p class="produto-card__desc">Butterfly em vinho intenso com detalhe metálico dourado no centro. Atrevido e elegante.</p>
+            <div class="produto-card__footer">
+              <span class="produto-card__price">R$ 124,90</span>
+              <button class="produto-card__cart" onclick="adicionarCarrinho(this)"
+                data-nome="Top Borboleta Vinho" data-preco="124.90" aria-label="Adicionar ao carrinho">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sobre" id="sobre">
+    <div class="container sobre__inner">
+      <div class="sobre__visual">
+        <div class="sobre__circle sobre__circle--1"></div>
+        <div class="sobre__circle sobre__circle--2"></div>
+        <div class="sobre__quote">
+          <span>✦</span>
+          <p>"Cada ponto carrega intenção e afeto."</p>
+        </div>
+      </div>
+      <div class="sobre__content">
+        <p class="section-eyebrow">Sobre o Ateliê</p>
+        <h2 class="section-title">Feito com amor,<br><em>do fio ao acabamento</em></h2>
+        <p>O Fio de Luz Ateliê nasceu do amor pelo artesanato e pela moda autoral. Cada peça é criada à mão, com fios cuidadosamente selecionados e atenção total aos detalhes.</p>
+        <p>Acreditamos que moda artesanal é moda consciente — peças únicas que contam histórias e duram muito mais do que o efêmero.</p>
+        <a href="#contato" class="btn btn--primary" style="margin-top: 1.5rem; display: inline-block;">Fale Conosco</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO / CTA -->
+  <section class="contato" id="contato">
+    <div class="container contato__inner">
+      <p class="section-eyebrow">Encomendas &amp; Contato</p>
+      <h2 class="section-title">Quer uma peça<br><em>personalizada?</em></h2>
+      <p class="contato__desc">Fazemos sob encomenda na cor e tamanho que você quiser. Entre em contato pelo WhatsApp ou Instagram.</p>
+      <div class="contato__btns">
+        <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn--primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:6px">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          WhatsApp
+        </a>
+        <a href="https://instagram.com/fiodeLuzatelie" target="_blank" rel="noopener" class="btn btn--outline-dark">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="vertical-align:middle;margin-right:6px">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__brand-name">Fio de Luz</span>
+        <span class="footer__brand-sub">Ateliê</span>
+      </div>
+      <p class="footer__copy">© 2026 Fio de Luz Ateliê. Todos os direitos reservados.</p>
+      <p class="footer__made">Feito com ♥ e muito crochê</p>
+    </div>
+  </footer>
+
+  <!-- CARRINHO SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay" onclick="fecharCarrinho()"></div>
+  <aside class="cart-sidebar" id="cartSidebar" aria-label="Carrinho de compras">
+    <div class="cart-sidebar__header">
+      <h2>Carrinho</h2>
+      <button onclick="fecharCarrinho()" aria-label="Fechar carrinho">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-sidebar__items" id="cartItems">
+      <p class="cart-empty">Seu carrinho está vazio.</p>
+    </div>
+    <div class="cart-sidebar__footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">R$ 0,00</span>
+      </div>
+      <a href="https://wa.me/5500000000000" target="_blank" id="cartWhatsapp" class="btn btn--primary btn--full">
+        Finalizar pelo WhatsApp
+      </a>
+    </div>
+  </aside>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
