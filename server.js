@@ -2,7 +2,7 @@ const http = require('http');
 const fs   = require('fs');
 const path = require('path');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 const ROOT = __dirname;
 
 const MIME = {
@@ -19,13 +19,18 @@ const MIME = {
 };
 
 http.createServer((req, res) => {
-  let filePath = path.join(ROOT, req.url === '/' ? 'index.html' : req.url);
+  // Remove query string e garante que / serve index.html
+  const urlPath = req.url.split('?')[0];
+  let filePath = path.join(ROOT, urlPath === '/' ? 'index.html' : urlPath);
   const ext    = path.extname(filePath).toLowerCase();
-  const mime   = MIME[ext] || 'application/octet-stream';
+  const mime   = MIME[ext] || 'text/html; charset=utf-8';
+
+  // Se não tem extensão, serve index.html
+  if (!ext) filePath = path.join(ROOT, 'index.html');
 
   fs.readFile(filePath, (err, data) => {
     if (err) {
-      res.writeHead(404);
+      res.writeHead(404, { 'Content-Type': 'text/plain' });
       res.end('Not found');
       return;
     }
