@@ -32,6 +32,6 @@ http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': mime });
     res.end(data);
   });
-}).listen(PORT, () => {
+}).listen(PORT, '0.0.0.0', () => {
   console.log(`✦ Fio de Luz rodando em http://localhost:${PORT}`);
 });
