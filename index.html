@@ -95,22 +95,21 @@
     <div class="container">
       <div class="section-header">
         <p class="section-eyebrow">Nossa Coleção</p>
-        <h2 class="section-title">Tops Artesanais</h2>
+        <h2 class="section-title">Peças Artesanais</h2>
         <p class="section-desc">Cada peça é produzida com cuidado e dedicação no nosso ateliê.</p>
       </div>
 
       <!-- Filtros -->
       <div class="filtros">
         <button class="filtro-btn active" data-filter="all">Todos</button>
-        <button class="filtro-btn" data-filter="bojo">Com Bojo</button>
-        <button class="filtro-btn" data-filter="borboleta">Borboleta</button>
-        <button class="filtro-btn" data-filter="bandeau">Bandeau</button>
+        <button class="filtro-btn" data-filter="bojo">Tops</button>
+        <button class="filtro-btn" data-filter="bolsa">Bolsas</button>
+        <button class="filtro-btn" data-filter="bebe">Bebê</button>
       </div>
 
       <!-- Grid de produtos -->
       <div class="produtos__grid" id="produtosGrid">
 
-        <!-- Produto 1 -->
         <article class="produto-card" data-category="bojo">
           <div class="produto-card__img-wrap">
             <img src="images/top-terracota.jpg" alt="Top Halter Terracota" class="produto-card__img" loading="lazy" />
@@ -140,7 +139,7 @@
         </article>
 
         <!-- Produto 2 -->
-        <article class="produto-card" data-category="bandeau">
+        <article class="produto-card" data-category="bojo">
           <div class="produto-card__img-wrap">
             <img src="images/top-bandeau-cru.jpg" alt="Top Bandeau Cru" class="produto-card__img" loading="lazy" />
             <div class="produto-card__overlay">
@@ -197,7 +196,7 @@
         </article>
 
         <!-- Produto 4 -->
-        <article class="produto-card" data-category="borboleta">
+        <article class="produto-card" data-category="bojo">
           <div class="produto-card__img-wrap">
             <img src="images/top-borboleta-cru.jpg" alt="Top Borboleta Cru" class="produto-card__img" loading="lazy" />
             <div class="produto-card__overlay">
@@ -253,7 +252,7 @@
         </article>
 
         <!-- Produto 6 -->
-        <article class="produto-card" data-category="borboleta">
+        <article class="produto-card" data-category="bojo">
           <div class="produto-card__img-wrap">
             <img src="images/top-borboleta-vinho.jpg" alt="Top Borboleta Vinho" class="produto-card__img" loading="lazy" />
             <div class="produto-card__overlay">
@@ -281,11 +280,67 @@
           </div>
         </article>
 
+        <!-- Bolsa Safira -->
+        <article class="produto-card" data-category="bolsa">
+          <div class="produto-card__img-wrap">
+            <img src="images/bolsa-safira.jpg" alt="Bolsa Safira" class="produto-card__img" loading="lazy" />
+            <div class="produto-card__overlay">
+              <button class="btn btn--outline" onclick="adicionarCarrinho(this)"
+                data-nome="Bolsa Safira" data-preco="150.00">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+            <span class="produto-card__badge produto-card__badge--dest">Novo</span>
+          </div>
+          <div class="produto-card__info">
+            <h3 class="produto-card__name">Bolsa Safira</h3>
+            <span class="produto-card__tamanho">Único</span>
+            <p class="produto-card__desc">Bolsa de crochê azul marinho com alça de mão trançada e corrente dourada. Elegante e artesanal.</p>
+            <div class="produto-card__footer">
+              <span class="produto-card__price">R$ 150,00</span>
+              <button class="produto-card__cart" onclick="adicionarCarrinho(this)"
+                data-nome="Bolsa Safira" data-preco="150.00" aria-label="Adicionar ao carrinho">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vestido Bella -->
+        <article class="produto-card" data-category="bebe">
+          <div class="produto-card__img-wrap">
+            <img src="images/vestido-bella.jpg" alt="Vestido Bella" class="produto-card__img" loading="lazy" />
+            <div class="produto-card__overlay">
+              <button class="btn btn--outline" onclick="adicionarCarrinho(this)"
+                data-nome="Vestido Bella" data-preco="150.00">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+            <span class="produto-card__badge produto-card__badge--dest">Novo</span>
+          </div>
+          <div class="produto-card__info">
+            <h3 class="produto-card__name">Vestido Bella</h3>
+            <span class="produto-card__tamanho">Bebê</span>
+            <p class="produto-card__desc">Vestido de crochê para bebê em tom cru com detalhes dourados, fita e tiara inclusa. Delicado e especial.</p>
+            <div class="produto-card__footer">
+              <span class="produto-card__price">R$ 150,00</span>
+              <button class="produto-card__cart" onclick="adicionarCarrinho(this)"
+                data-nome="Vestido Bella" data-preco="150.00" aria-label="Adicionar ao carrinho">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
-
-  <!-- SOBRE -->
   <section class="sobre" id="sobre">
     <div class="container sobre__inner">
       <div class="sobre__visual">
